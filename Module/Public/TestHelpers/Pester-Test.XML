@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="3" errors="0" failures="3" not-run="5" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2020-07-09" time="11:33:47">
+  <environment clr-version="4.0.30319.42000" user-domain="SDGLOCAL" cwd="D:\Code\experimental\AzDoPipelineHelpers\Module\Public\TestHelpers" platform="Microsoft Windows 10 Pro|C:\WINDOWS|\Device\Harddisk1\Partition3" machine-name="DEREK-TOWER" nunit-version="2.5.8.0" os-version="10.0.19041" user="dbaker" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Failure" success="False" time="12.3675" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="D:\Code\experimental\AzDoPipelineHelpers\Module\Public\TestHelpers\Test.DatabaseObjects.Functions.Tests.ps1" executed="True" result="Success" success="True" time="10.1954" asserts="0" description="D:\Code\experimental\AzDoPipelineHelpers\Module\Public\TestHelpers\Test.DatabaseObjects.Functions.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="ValidateViews returns expected when testing valid views" executed="True" result="Success" success="True" time="0" asserts="0" description="ValidateViews returns expected when testing valid views">
+            <results>
+              <test-case description="returns expected" name="ValidateViews returns expected when testing valid views.returns expected" time="0" asserts="0" success="False" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="ValidateStoredProcedures returns expected when testing valid sprocs" executed="True" result="Success" success="True" time="0" asserts="0" description="ValidateStoredProcedures returns expected when testing valid sprocs">
+            <results>
+              <test-case description="returns expected" name="ValidateStoredProcedures returns expected when testing valid sprocs.returns expected" time="0" asserts="0" success="False" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+      <test-suite type="TestFixture" name="D:\Code\experimental\AzDoPipelineHelpers\Module\Public\TestHelpers\Test.ErrorLogs.Tests.ps1" executed="True" result="Failure" success="False" time="2.1721" asserts="0" description="D:\Code\experimental\AzDoPipelineHelpers\Module\Public\TestHelpers\Test.ErrorLogs.Tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="CheckEventViewerForErrors" executed="True" result="Failure" success="False" time="1.7496" asserts="0" description="CheckEventViewerForErrors">
+            <results>
+              <test-case description="returns $false when there are no entries found for the source" name="CheckEventViewerForErrors.returns $false when there are no entries found for the source" time="0.8241" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>CommandNotFoundException: Could not find Command </message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="returns $false when there are entries for the source but no errors" name="CheckEventViewerForErrors.returns $false when there are entries for the source but no errors" time="0.017" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>CommandNotFoundException: Could not find Command </message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="returns $true when there are error entries for the source" name="CheckEventViewerForErrors.returns $true when there are error entries for the source" time="0.0117" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>CommandNotFoundException: Could not find Command </message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="CheckEventViewerForErrors" executed="True" result="Success" success="True" time="1.7496" asserts="0" description="CheckEventViewerForErrors">
+            <results>
+              <test-case description="returns $false when there are no entries found" name="CheckEventViewerForErrors.returns $false when there are no entries found" time="0" asserts="0" success="False" />
+              <test-case description="returns $true when there are entries for the source but no errors" name="CheckEventViewerForErrors.returns $true when there are entries for the source but no errors" time="0" asserts="0" success="False" />
+              <test-case description="returns $false when there are error entries for the source" name="CheckEventViewerForErrors.returns $false when there are error entries for the source" time="0" asserts="0" success="False" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
