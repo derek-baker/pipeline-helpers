@@ -3,7 +3,7 @@ param(
     [string] $apiKey,
 
     [Parameter(mandatory=$false)]
-    [string] $moduleName = 'AzureDevOpsHelpers',
+    [string] $moduleName = 'AzDoPipelineHelpers',
 
     [Parameter(mandatory=$false)]
     [string] $moduleInstallDir = "$Env:UserProfile\Documents\WindowsPowerShell\Modules\$moduleName"
