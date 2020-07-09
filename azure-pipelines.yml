@@ -1,0 +1,29 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'Install-Module -Name Pester -Force'
+    failOnStderr: true
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'Set-Location $(Build.Repository.LocalPath)\Module\Public; Invoke-Pester -Tag ''Unit'' -OutputFile $(System.DefaultWorkingDirectory)\Pester-Test.XML -OutputFormat NUnitXML -CodeCoverage ''**/*.psm1'' -CodeCoverageOutputFile ''Pester-Coverage.xml'' -CodeCoverageOutputFileFormat JaCoCo'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/Pester-Test.xml'
+    failTaskOnFailedTests: true
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: '**/Pester-Coverage.xml'
+    pathToSources: '$(System.DefaultWorkingDirectory)'
