@@ -14,8 +14,8 @@ Describe 'RunExe' -Tags 'Integration' {
         [string] $pathToExe = "$PSScriptRoot\TODO.exe"
 
         # Act
-        $args = '-v true -h ' + "$Env:ComputerName " + '-d TN_UnitTest -u BuildAgent -p <ASK_DEVOPS>'
-        [int] $actual = RunExe -pathToExe $pathToExe -argsString $args
+        $arguments = '-v true -h ' + "$Env:ComputerName " + '-d UnitTest -u BuildAgent -p <ASK_DEVOPS>'
+        [int] $actual = RunExe -pathToExe $pathToExe -argsString $arguments
 
         # Assert
         $actual | Should Be $expected
@@ -26,8 +26,8 @@ Describe 'RunExe' -Tags 'Integration' {
         [string] $pathToExe = "$PSScriptRoot\TODO.exe"
 
         # Act
-        $args = '-v true -h ' + "$Env:ComputerName " + '-d TN_UnitTest -i true'
-        [int] $actual = RunExe -pathToExe $pathToExe -argsString $args
+        $arguments = '-v true -h ' + "$Env:ComputerName " + '-d UnitTest -i true'
+        [int] $actual = RunExe -pathToExe $pathToExe -argsString $arguments
 
         # Assert
         $actual | Should Be $expected

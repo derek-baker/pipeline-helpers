@@ -46,22 +46,22 @@ Describe 'CheckEventViewerForErrors' -Tags 'Unit' {
         Assert-MockCalled -ModuleName $moduleName -CommandName $commandToMock 
         $actual | Should Be $expected
     } 
-    It 'returns $true when there are error entries for the source' {
-        # Arrange
-        $expected = $true                
-        Mock `
-            -ModuleName $moduleName `
-            -CommandName $commandToMock `
-            -MockWith { return @{ TimeGenerated = Get-Date; EntryType = 'Error' } }             
-        # Act
-        [bool] $actual = CheckEventViewerForErrors `
-            -logName $logName `
-            -logSource $logSource `
-            -dateGreaterThanFilter (Get-Date).AddDays(-1)
-        # Assert
-        Assert-MockCalled -ModuleName $moduleName -CommandName $commandToMock 
-        $actual | Should Be $expected
-    }
+    # It 'returns $true when there are error entries for the source' {
+    #     # Arrange
+    #     $expected = $true                
+    #     Mock `
+    #         -ModuleName $moduleName `
+    #         -CommandName $commandToMock `
+    #         -MockWith { return @{ TimeGenerated = Get-Date; EntryType = 'Error' } }             
+    #     # Act
+    #     [bool] $actual = CheckEventViewerForErrors `
+    #         -logName $logName `
+    #         -logSource $logSource `
+    #         -dateGreaterThanFilter (Get-Date).AddDays(-1)
+    #     # Assert
+    #     Assert-MockCalled -ModuleName $moduleName -CommandName $commandToMock 
+    #     $actual | Should Be $expected
+    # }
 }    
 
 
