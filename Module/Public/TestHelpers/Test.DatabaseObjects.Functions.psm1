@@ -75,14 +75,14 @@ function ValidateStoredProcedures(
                 -EnableException                
         }
         catch {
-            # INTENT: Avoid interfering with work directories in consuming scripts
-            Set-Location $originalLocation
             Write-Host $_
             return 1
         }
-    }
-    # INTENT: Avoid interfering with work directories in consuming scripts
-    Set-Location $originalLocation
+        finally {
+            # INTENT: Avoid interfering with work directories in consuming scripts
+            Set-Location $originalLocation   
+        }
+    }    
     return 0
 }
 
