@@ -1,4 +1,4 @@
-# AzDoPipelineHelpers
+# pipeline-helpers
 
 Tools used in build and release pipelines, with a focus on agentsrunning on Windows Servers. Packaging tools in a module allows more reusability, testability, and faster development cycles than otherwise.
 
